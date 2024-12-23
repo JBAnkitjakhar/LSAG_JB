@@ -128,7 +128,7 @@ const RegistrationPage = () => {
       setError('');
 
       // Generate keys from Go server
-      const response = await fetch('http://localhost:8080/generate-keys', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/generate-keys`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });

@@ -2,6 +2,8 @@
 package main
 
 import (
+    
+    "os"
     "encoding/base64"
     "encoding/hex"
     "encoding/json"
@@ -101,7 +103,6 @@ func healthCheckHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    // Set logging flags to match Lirisi example
     log.SetFlags(log.LstdFlags | log.Lshortfile)
 
     r := mux.NewRouter()
@@ -110,17 +111,21 @@ func main() {
     r.HandleFunc("/generate-keys", generateKeysHandler).Methods("POST")
     r.HandleFunc("/health", healthCheckHandler).Methods("GET")
     
-    // CORS middleware with more permissive settings for development
+    // CORS middleware
     c := cors.New(cors.Options{
-        AllowedOrigins: []string{"http://localhost:3000"}, 
+        AllowedOrigins: []string{"*"}, // Will update this after deployment
         AllowedMethods: []string{"GET", "POST", "OPTIONS"},
         AllowedHeaders: []string{"Content-Type", "Authorization"},
-        Debug:          true, // Enable debugging for development
+        Debug:          false,
     })
 
     handler := c.Handler(r)
 
-    // Start server
-    log.Println("Starting server on :8080")
-    log.Fatal(http.ListenAndServe(":8080", handler))
+    port := os.Getenv("PORT")
+    if port == "" {
+        port = "8080"
+    }
+
+    log.Printf("Starting server on :%s", port)
+    log.Fatal(http.ListenAndServe(":"+port, handler))
 }
