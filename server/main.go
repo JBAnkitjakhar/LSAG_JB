@@ -113,7 +113,7 @@ func main() {
     
     // CORS middleware
     c := cors.New(cors.Options{
-        AllowedOrigins: []string{"https://lsag-jbuptogenerationphase.vercel.app/"}, // Will update this after deployment
+        AllowedOrigins: []string{"https://lsag-jbuptogenerationphase.vercel.app"}, // Will update this after deployment
         AllowedMethods: []string{"GET", "POST", "OPTIONS"},
         AllowedHeaders: []string{"Content-Type", "Authorization"},
         Debug:          false,
