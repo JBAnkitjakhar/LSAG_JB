@@ -1,7 +1,7 @@
 // src/constants/index.ts
 
 // This will be automatically updated by the deployment script
-export const VOTING_CONTRACT_ADDRESS = "0x5Ac563C51aDf431Ba3879DF228Ae31b17fc96391";
+export const VOTING_CONTRACT_ADDRESS = "0x337fC43522b9e61DEBedE003044F33bAaA041531";
 
 // This will be automatically updated by the deployment script with the full ABI
 export const VOTING_CONTRACT_ABI = [

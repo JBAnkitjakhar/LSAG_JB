@@ -7,7 +7,7 @@ async function main() {
   console.log("Deploying VotingRegistration contract...");
   
   // 5 hours in seconds
-  const registrationDuration = 15 * 60 * 60; 
+  const registrationDuration = 240 * 60 * 60; 
   
   const VotingRegistration = await ethers.getContractFactory("VotingRegistration");
   const votingRegistration = await VotingRegistration.deploy(registrationDuration);
