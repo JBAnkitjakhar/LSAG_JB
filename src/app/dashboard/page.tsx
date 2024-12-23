@@ -6,7 +6,6 @@ import { Copy, ExternalLink } from 'lucide-react';
 import { VOTING_CONTRACT_ADDRESS } from '@/constants';
 import RegistrationPage from '@/components/registration';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
-import { GlareCard } from '@/components/ui/glare-card';
 
 const Dashboard = () => {
   const handleCopy = async () => {
@@ -24,7 +23,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-4xl mx-auto px-4">
-        <GlareCard className="mb-8">
+        <div className="bg-white rounded-lg shadow-sm mb-8">
           <div className="space-y-6 p-6">
             <h2 className="text-2xl font-bold text-gray-900">Smart Contract Details</h2>
             
@@ -47,14 +46,14 @@ const Dashboard = () => {
             <HoverBorderGradient>
               <button
                 onClick={handleViewOnBscScan}
-                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200"
+                className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition-colors duration-200"
               >
                 View on BSCScan
                 <ExternalLink className="w-4 h-4" />
               </button>
             </HoverBorderGradient>
           </div>
-        </GlareCard>
+        </div>
 
         <RegistrationPage />
       </div>
