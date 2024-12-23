@@ -1,6 +1,6 @@
  
 // src/app/dashboard/page.tsx
- 
+ "use client"
 import React from 'react';
 import { Copy, ExternalLink } from 'lucide-react';
 import { VOTING_CONTRACT_ADDRESS } from '@/constants';
