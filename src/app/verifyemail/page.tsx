@@ -21,7 +21,7 @@
    const [success, setSuccess] = useState(false);
    const [loading, setLoading] = useState(false);
    const router = useRouter();
-   const words = ["DApps", "IIT-Bhilai", "Using LSAG", "Security"];
+   const words = ["De.Apps", "IIT-Bhilai", "Using LSAG", "Security"];
    const handleSubmit = async (e: React.FormEvent) => {
      e.preventDefault();
      setLoading(true);
