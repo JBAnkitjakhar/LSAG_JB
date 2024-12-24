@@ -1,9 +1,8 @@
-//src/app/layout.tsx
-
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Boxes } from "@/components/ui/background-boxes";
+import ClientBoxes from "@/components/client/ClientBoxes";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,19 +27,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-<body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-slate-900`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-slate-900`}>
         <div className="min-h-screen relative w-full overflow-hidden bg-slate-900 flex items-center justify-center p-4">
           <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
           <div className="absolute inset-0">
-            <Boxes />
+            <ClientBoxes />
           </div>
           <div className="relative z-30 w-full max-w-6xl mx-auto">
             {children}
           </div>
         </div>
       </body>
-
     </html>
   );
 }
