@@ -1,3 +1,5 @@
+//src/components/ui/flip-words/tsx
+
 "use client";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, LayoutGroup, HTMLMotionProps } from "framer-motion";
@@ -59,7 +61,7 @@ export const FlipWords = ({
         }}
         className={cn(
         //   "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
-        "z-10 inline-block relative text-left text-blue-700   px-2",
+        "z-10 inline-block relative text-left text-blue-300   px-2",
           className
         )}
         key={currentWord}
